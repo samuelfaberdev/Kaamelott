@@ -15,7 +15,7 @@ app.use(cors());
 /**
  * Fetch all data
  */
-app.get("/all", async (req, res) => {
+app.get("/api/all", async (req, res) => {
 	try {
 		const response = await axios.get(BASE_API + "/all");
 		res.status(200).send(response.data);
@@ -28,7 +28,7 @@ app.get("/all", async (req, res) => {
  * Fetch random data
  */
 
-app.get("/random", async (req, res) => {
+app.get("/api/random", async (req, res) => {
 	try {
 		const response = await axios.get(BASE_API + "/random");
 		res.status(200).send(response.data);
@@ -41,7 +41,7 @@ app.get("/random", async (req, res) => {
  * Fetch img
  */
 
-app.get("/personnage/:personnage/pic", async (req, res) => {
+app.get("/api/personnage/:personnage/pic", async (req, res) => {
 	try {
 		const response = await axios.get(
 			BASE_API + `/personnage/${req.params.personnage}/pic`,
